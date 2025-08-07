@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Música</title>
+</head>
+<body>
+    <form action="{% url 'inserir_musica' dado.id %}" method="post">
+        {% csrf_token %}
+        <h1>Nova Música</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome"><br>
+        <label for="artista">Artista:</label>
+        <input type="text" name="artista"><br>
+        <label for="mp3">Arquivo MP3:</label>
+        <input type="file" name="mp3"><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <hr>
+    <a href="{% url 'index' %}">Voltar</a>
+    
+</body>
+</html>

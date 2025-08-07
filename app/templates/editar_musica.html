@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Música</title>
+</head>
+<body>
+    <form action="{% url 'editar_musica' dado.id %}" method="post">
+        {% csrf_token %}
+        <h1>Editar Música</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="{{ dado.nome }}"><br>
+        <label for="artista">Artista:</label>
+        <input type="text" name="artista" value="{{ dado.artista }}"><br>
+        <label for="mp3">Arquivo MP3:</label>
+        <input type="file" name="mp3" value="{{ dado.mp3.url }}"><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <hr>
+    <a href="{% url 'musicas' dado.id %}">Voltar</a>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Músicas</title>
+</head>
+<body>
+    <h1>Suas Músicas</h1>
+    {% for dado in dado %}
+    <h3>Nome: {{ dado.nome }}</h3>
+    <h3>Artista: {{ dado.artista }}</h3>
+    <h3>MP3: <audio controls>
+        <source src="{{ dado.mp3.url }}">
+    </audio></h3>
+    <a href="{% url 'editar_musica' dado.id %}">Editar</a> <a href="{% url 'deletar_musica' dado.id %}">Deletar</a>
+    {% endfor %}
+    <hr>
+    <a href="{% url 'inserir_musica' genero.id %}">Adicionar</a> <a href="{% url 'index' %}">Voltar</a>
+</body>
+</html>

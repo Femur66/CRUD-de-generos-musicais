@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+</head>
+<body>
+    <form action="{% url 'inserir' %}" method="post">
+        {% csrf_token %}
+        <h1>Novo Gênero Musical</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome">
+        <button type="submit">Salvar</button>
+    </form>
+    <hr>
+    <a href="{% url 'index' %}">Voltar</a>
+    
+</body>
+</html>
